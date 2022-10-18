@@ -1,4 +1,4 @@
-import express from "express";
+import express, { application } from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 
@@ -28,5 +28,18 @@ app.get('/characters', async (req, res) => {
     console.log(err);
   }
 })
+
+app.post("/auth/signup/", async (req, res, next) => {
+  try {
+    const {name, email, password} = req.body;
+    console.log(req.body);
+
+    res.json({
+
+    })
+  } catch (err) {
+
+  }
+});
 
 export default app;
